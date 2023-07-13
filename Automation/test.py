@@ -6,10 +6,20 @@
 #####################################################################################################################################################################################
 # Library/ies
 import drivers
-# Test
+import steps
+# Test per browser
+'''
 browsers = ['chrome', 'firefox', 'edge', 'safari']
 
 for browser in browsers:
     driver = drivers.webDriver(browser)
     driver.get("http://www.google.com")
     driver.quit()
+'''
+# Login test
+driver = drivers.webDriver('Chrome')
+steps.defineWebSite(driver)
+steps.login(driver)
+steps.createTicket(driver)
+driver.quit()
+
